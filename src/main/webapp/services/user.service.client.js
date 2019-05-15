@@ -1,12 +1,12 @@
 function UserService() {
 
-    this.deleteUserUrl = 'http://blooming-fortress-89013.herokuapp.com/users/USER_ID';
-    this.findAllUsersUrl = 'http://blooming-fortress-89013.herokuapp.com/users';
+    this.deleteUserUrl = 'http://localhost:8080/users/USER_ID';
+    this.findAllUsersUrl = 'http://localhost:8080/users';
     
     this.createUser = function (user) {
         user.id = (new Date()).getTime();
         console.log(user);
-        return fetch("http://blooming-fortress-89013.herokuapp.com/users", {
+        return fetch("http://localhost:8080/users", {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {

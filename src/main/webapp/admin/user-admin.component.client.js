@@ -11,8 +11,8 @@
     const $roleFld = $('#role');
     const tbody = $('tbody');
     const $deleteBtn = $('.deleteBtn')
-    const findAllUsersUrl = 'http://blooming-fortress-89013.herokuapp.com/users'
-    const deleteUserUrl = 'http://blooming-fortress-89013.herokuapp.com/users/USER_ID'
+    const findAllUsersUrl = 'http://localhost:8080/users'
+    const deleteUserUrl = 'http://localhost:8080/users/USER_ID'
     const userService = new UserService()
 
     $.ajax(findAllUsersUrl, {
