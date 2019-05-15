@@ -5,7 +5,8 @@
     const $usernameFld = $('#usernameFld');
     const $passwordFld = $('#passwordFld');
     const $firstNameFld = $('#firstNameFld');
-    const $lastNameFld = $('#lastNameFld')
+    const $lastNameFld = $('#lastNameFld');
+    const $editBtn = $('editBtn');
     const userRowTemplate = $('.userRowTemplate');
     const $roleFld = $('#role');
     const tbody = $('tbody');
@@ -29,6 +30,7 @@
 
     $createBtn.click(createUser)
     $deleteBtn.click(deleteUser)
+    $editBtn.click(editUser)
 
     function deleteUser(event) {
         deleteBtn = $(event.currentTarget);
