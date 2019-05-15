@@ -14,8 +14,8 @@
 
     const tbody = $('tbody');
 
-    const findAllUsersUrl = 'http://localhost:8080/users'
-    //const deleteUserUrl = 'http://localhost:8080/users/USER_ID'
+    const findAllUsersUrl = 'http://blooming-fortress-89013.herokuapp.com/users'
+    //const deleteUserUrl = 'http://blooming-fortress-89013.herokuapp.com/users/USER_ID'
     const userService = new UserService()
 
     $.ajax(findAllUsersUrl, {
@@ -109,8 +109,8 @@
         $updateBtn.attr('id', id)
         console.log(userName, firstName, lastName, role);
         $usernameFld.val(userName);
-        $firstNameFld.val(firstName)
-        $lastNameFld.val(lastName)
+        $firstNameFld.val(firstName);
+        $lastNameFld.val(lastName);
         $roleFld.val(role);
 
         const user = {
@@ -119,7 +119,6 @@
             firstName: firstName,
             lastName: lastName,
             role: role
-            //TODO: add role
         }
 
 
@@ -132,8 +131,6 @@
         const passwordCol = row.find('.passwordCol');
         const firstNameCol = row.find('.firstNameCol');
         const lastNameCol = row.find('.lastNameCol')
-        //TODO: add lastNameCol
-        //TODO: add role
         const roleCol = row.find('roleCol')
         const deleteBtn = row.find('.deleteBtn');
         const editBtn = row.find('.editBtn').click(selectUser);
