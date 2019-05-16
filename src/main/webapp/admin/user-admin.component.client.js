@@ -10,7 +10,7 @@
     const $firstNameFld = $('#firstNameFld');
     const $lastNameFld = $('#lastNameFld');
     const userRowTemplate = $('.userRowTemplate');
-    const $roleFld = $('#role');
+    const $roleFld = $('#roleFld');
 
     const tbody = $('tbody');
 
