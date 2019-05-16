@@ -15,7 +15,6 @@
     const tbody = $('tbody');
 
     const findAllUsersUrl = 'http://blooming-fortress-89013.herokuapp.com/users'
-    //const deleteUserUrl = 'http://blooming-fortress-89013.herokuapp.com/users/USER_ID'
     const userService = new UserService()
 
     $.ajax(findAllUsersUrl, {
@@ -83,6 +82,7 @@
         const firstName = $firstNameFld.val()
         const lastName = $lastNameFld.val()
         const role = $roleFld.val();
+        console.log("Creating user for "+role);
         console.log(username, password, firstName, role)
 
         const user = {
@@ -91,7 +91,6 @@
             firstName: firstName,
             lastName: lastName,
             role: role
-            //TODO: add role
         }
 
         userService
@@ -131,10 +130,12 @@
         const passwordCol = row.find('.passwordCol');
         const firstNameCol = row.find('.firstNameCol');
         const lastNameCol = row.find('.lastNameCol')
-        const roleCol = row.find('roleCol')
+        const roleCol = row.find('.roleCol')
         const deleteBtn = row.find('.deleteBtn');
         const editBtn = row.find('.editBtn').click(selectUser);
         editBtn.attr('userNameCol', user.username);
+        editBtn.attr('firstNameCol', user.firstName);
+
         editBtn.attr('id', user.id);
         deleteBtn.click(deleteUser);
         deleteBtn.attr('id', user.id);
@@ -143,7 +144,8 @@
         passwordCol.html(user.password);
         firstNameCol.html(user.firstName);
         lastNameCol.html(user.lastName);
-        roleCol.html(user.role)
+        console.log(user.role);
+        roleCol.html("989898")
         tbody.append(row)
     }
 })()
