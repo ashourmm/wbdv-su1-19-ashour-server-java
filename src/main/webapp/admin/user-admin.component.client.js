@@ -145,7 +145,7 @@
         firstNameCol.html(user.firstName);
         lastNameCol.html(user.lastName);
         console.log(user.role);
-        roleCol.html("989898")
+        roleCol.html(user.role);
         tbody.append(row)
     }
 })()
