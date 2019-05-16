@@ -17,9 +17,9 @@ import com.example.wbdvsu119ashourserverjava.models.User;
 @RestController
 public class UserController {
 	private User[] users = {
-            new User(1, "alice", "alice", "Alice", "Wonderland"),
-            new User(2, "bob", "bob", "Bob", "The builder"),
-            new User(3, "charlier", "charlier", "Charlier", "Brown")
+            new User(1, "alice", "alice", "Alice", "Wonderland", "Student"),
+            new User(2, "bob", "bob", "Bob", "The builder", "Student"),
+            new User(3, "charlier", "charlier", "Charlier", "Brown", "Student")
     };
     List<User> userArrayList = new ArrayList<User>(Arrays.asList(users));
 	
