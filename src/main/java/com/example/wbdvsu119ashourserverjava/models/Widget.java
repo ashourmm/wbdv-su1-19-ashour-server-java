@@ -1,6 +1,14 @@
 package com.example.wbdvsu119ashourserverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Widget {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String type;
@@ -8,6 +16,7 @@ public class Widget {
 	private int size;
 	private String listItems;
 	private Boolean ordered;
+	
 	
 	public Widget(Long id, String name, String type, String text, int size, String listItems, Boolean ordered) {
 		super();
