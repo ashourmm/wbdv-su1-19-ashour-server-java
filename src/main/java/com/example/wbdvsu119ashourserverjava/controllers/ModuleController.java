@@ -42,8 +42,8 @@ public class ModuleController {
 
     @DeleteMapping("/api/modules/{moduleId}")
     public List<Module> deleteModule(
-        @PathVariable("moduleId") Integer mId) {
-        repository.deleteById(mId);
+        @PathVariable("moduleId") Integer id) {
+        repository.deleteById(id);
         return null;
 
     }
