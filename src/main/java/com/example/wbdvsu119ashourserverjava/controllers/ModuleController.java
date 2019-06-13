@@ -10,6 +10,7 @@ import com.example.wbdvsu119ashourserverjava.repositories.ModuleRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,13 +34,17 @@ public class ModuleController {
     public List<Module> createModule(
         @RequestBody Module module,
         @PathVariable("courseId") Integer id) {
-        //grab course from the database using the course id provided in the url 
         Optional<Course> course = courseRepo.findById(id);
-        //set course using setter in module
         module.setCourse(course.get());
-        //save module using repo
         repository.save(module);
-        //return list of modules that have the same course id
         return (List<Module>) repository.findModulesWithCourseId(id);
+    }
+
+    @DeleteMapping("/api/modules/{moduleId}")
+    public List<Module> deleteModule(
+        @PathVariable("moduleId") Integer mId) {
+        repository.deleteById(mId);
+        return null;
+
     }
 }
