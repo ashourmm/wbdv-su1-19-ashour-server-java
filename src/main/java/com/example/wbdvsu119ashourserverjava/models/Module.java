@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name="modules")
 public class Module {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +23,8 @@ public class Module {
     @JsonIgnore
     private Course course;
 
-    @OneToMany(mappedBy = "module")
-    private List<Lesson> lessons;
+    // @OneToMany(mappedBy = "module")
+    // private List<Lesson> lessons;
 
     public int getId() {
         return id;
@@ -33,13 +35,13 @@ public class Module {
     }
 
 
-    public List<Lesson> getLessons() {
-        return lessons;
-    }
+    // public List<Lesson> getLessons() {
+    //     return lessons;
+    // }
 
-    public void setLessons(List<Lesson> lessons) {
-        this.lessons = lessons;
-    }
+    // public void setLessons(List<Lesson> lessons) {
+    //     this.lessons = lessons;
+    // }
 
     public Course getCourse() {
         return course;
@@ -48,8 +50,4 @@ public class Module {
     public void setCourse(Course course) {
         this.course = course;
     }
-
-    
-    
-
 }
