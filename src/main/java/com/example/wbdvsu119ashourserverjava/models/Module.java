@@ -1,13 +1,12 @@
 package com.example.wbdvsu119ashourserverjava.models;
 
-import java.util.List;
+import com.example.wbdvsu119ashourserverjava.models.Course;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
